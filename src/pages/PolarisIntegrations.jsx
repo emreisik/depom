@@ -10,7 +10,6 @@ import {
   Button,
   EmptyState,
   Banner,
-  Stack,
   TextContainer,
 } from '@shopify/polaris';
 import { getIntegrations, getStores } from '../utils/api';
