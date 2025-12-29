@@ -14,7 +14,9 @@ exports.handler = async (event, context) => {
 
     // GET - Tüm mağazaları listele
     if (event.httpMethod === 'GET') {
-      const stores = await getStores(userId);
+      // Demo mode: Eğer query parameter'da userId varsa onu kullan, yoksa tüm mağazaları getir
+      const queryUserId = event.queryStringParameters?.userId;
+      const stores = queryUserId ? await getStores(queryUserId) : await getStores(userId);
       
       return response(200, {
         success: true,

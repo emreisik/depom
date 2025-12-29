@@ -213,6 +213,19 @@ async function initializeTables(pool) {
 // Helper functions for common operations
 async function getStores(userId) {
   const pool = await connectToDatabase();
+  
+  // Demo mode: Eğer userId demo-user ise veya user- ile başlıyorsa tüm mağazaları göster
+  const isDemoMode = !userId || userId === 'demo-user' || userId.startsWith('user-');
+  
+  if (isDemoMode) {
+    // Demo modda tüm aktif mağazaları göster
+    const result = await pool.query(
+      'SELECT * FROM stores WHERE is_active = true ORDER BY created_at DESC'
+    );
+    return result.rows;
+  }
+  
+  // Normal mode: Sadece kullanıcının mağazalarını göster
   const result = await pool.query(
     'SELECT * FROM stores WHERE user_id = $1 AND is_active = true ORDER BY created_at DESC',
     [userId]
