@@ -1,3 +1,67 @@
+/* Polaris Custom Overrides */
+.Polaris-Breadcrumbs__PageTitle {
+  font-size: 1.5rem !important;
+  font-weight: 600 !important;
+  color: #202223 !important;
+}
+
+.Polaris-Page-Header__Title {
+  font-size: 1.75rem !important;
+  font-weight: 600 !important;
+}
+
+.Polaris-Frame__Navigation {
+  background: linear-gradient(180deg, #f6f6f7 0%, #ffffff 100%) !important;
+}
+
+.Polaris-Navigation__Item:hover {
+  background-color: #f1f2f4 !important;
+}
+
+.Polaris-Navigation__Item--selected {
+  background-color: #e8eaed !important;
+  border-left: 3px solid #5c6ac4 !important;
+}
+
+/* Polaris Card Enhancements */
+.Polaris-Card {
+  border-radius: 12px !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08) !important;
+  transition: box-shadow 0.2s ease !important;
+}
+
+.Polaris-Card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* Polaris Button Enhancements */
+.Polaris-Button--primary {
+  background: linear-gradient(180deg, #5c6ac4 0%, #4959bd 100%) !important;
+  border: none !important;
+  box-shadow: 0 2px 4px rgba(92, 106, 196, 0.3) !important;
+}
+
+.Polaris-Button--primary:hover {
+  background: linear-gradient(180deg, #4959bd 0%, #3f4eae 100%) !important;
+  box-shadow: 0 4px 8px rgba(92, 106, 196, 0.4) !important;
+}
+
+/* Polaris Badge Styling */
+.Polaris-Badge--statusSuccess {
+  background-color: #d4f4dd !important;
+  color: #0c6d38 !important;
+}
+
+.Polaris-Badge--statusCritical {
+  background-color: #fed3d1 !important;
+  color: #c81912 !important;
+}
+
+.Polaris-Badge--statusAttention {
+  background-color: #fffacd !important;
+  color: #916a00 !important;
+}
+
 /* Layout */
 .app-container {
   min-height: 100vh;
