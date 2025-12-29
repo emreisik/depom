@@ -53,7 +53,6 @@ export default function PolarisDashboard() {
       >
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <span style={{ fontSize: '24px' }}>🏪</span>
             <div>
               <Text variant="bodyMd" fontWeight="semibold" as="h3">
                 {name}
@@ -100,15 +99,15 @@ export default function PolarisDashboard() {
   return (
     <Page
       fullWidth
-      title="🏪 Depom"
+      title="Depom"
       subtitle="Mağazalar arası stok yönetimi"
       primaryAction={{
-        content: '➕ Yeni Mağaza',
+        content: 'Yeni Mağaza',
         onAction: () => navigate('/stores/add'),
       }}
       secondaryActions={[
         {
-          content: '🔄 Yenile',
+          content: 'Yenile',
           onAction: loadStores,
         },
       ]}

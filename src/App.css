@@ -1,17 +1,60 @@
+/* Polaris Typography System */
+:root {
+  --p-font-family-sans: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  --p-font-size-75: 0.75rem;    /* 12px */
+  --p-font-size-100: 0.8125rem; /* 13px */
+  --p-font-size-200: 0.875rem;  /* 14px */
+  --p-font-size-300: 0.9375rem; /* 15px */
+  --p-font-size-400: 1rem;      /* 16px */
+  --p-font-size-500: 1.125rem;  /* 18px */
+  --p-font-size-600: 1.25rem;   /* 20px */
+  --p-font-size-700: 1.625rem;  /* 26px */
+  --p-font-size-800: 2rem;      /* 32px */
+}
+
+/* Global Font Settings */
+* {
+  font-family: var(--p-font-family-sans) !important;
+}
+
 /* Polaris Custom Overrides */
 .Polaris-Breadcrumbs__PageTitle {
-  font-size: 1.5rem !important;
+  font-size: var(--p-font-size-600) !important;
   font-weight: 600 !important;
   color: #202223 !important;
+  letter-spacing: -0.01em !important;
 }
 
 .Polaris-Page-Header__Title {
-  font-size: 1.75rem !important;
+  font-size: var(--p-font-size-700) !important;
   font-weight: 600 !important;
+  letter-spacing: -0.02em !important;
+  line-height: 1.3 !important;
+}
+
+.Polaris-Text--headingMd {
+  font-size: var(--p-font-size-500) !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.01em !important;
+}
+
+.Polaris-Text--bodyMd {
+  font-size: var(--p-font-size-200) !important;
+  line-height: 1.5 !important;
+}
+
+.Polaris-Text--bodySm {
+  font-size: var(--p-font-size-100) !important;
+  line-height: 1.4 !important;
 }
 
 .Polaris-Frame__Navigation {
   background: linear-gradient(180deg, #f6f6f7 0%, #ffffff 100%) !important;
+}
+
+.Polaris-Navigation__Text {
+  font-size: var(--p-font-size-200) !important;
+  font-weight: 500 !important;
 }
 
 .Polaris-Navigation__Item:hover {
@@ -21,6 +64,11 @@
 .Polaris-Navigation__Item--selected {
   background-color: #e8eaed !important;
   border-left: 3px solid #5c6ac4 !important;
+}
+
+.Polaris-Navigation__Item--selected .Polaris-Navigation__Text {
+  font-weight: 600 !important;
+  color: #202223 !important;
 }
 
 /* Polaris Card Enhancements */
@@ -34,7 +82,21 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12) !important;
 }
 
+.Polaris-Card__Header {
+  padding: 20px 20px 16px !important;
+}
+
+.Polaris-Card__Section {
+  padding: 16px 20px !important;
+}
+
 /* Polaris Button Enhancements */
+.Polaris-Button {
+  font-size: var(--p-font-size-200) !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.01em !important;
+}
+
 .Polaris-Button--primary {
   background: linear-gradient(180deg, #5c6ac4 0%, #4959bd 100%) !important;
   border: none !important;
@@ -47,6 +109,13 @@
 }
 
 /* Polaris Badge Styling */
+.Polaris-Badge {
+  font-size: var(--p-font-size-75) !important;
+  font-weight: 500 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.04em !important;
+}
+
 .Polaris-Badge--statusSuccess {
   background-color: #d4f4dd !important;
   color: #0c6d38 !important;
@@ -60,6 +129,57 @@
 .Polaris-Badge--statusAttention {
   background-color: #fffacd !important;
   color: #916a00 !important;
+}
+
+/* Form Elements */
+.Polaris-Label {
+  font-size: var(--p-font-size-100) !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.01em !important;
+}
+
+.Polaris-TextField__Input,
+.Polaris-Select__Input {
+  font-size: var(--p-font-size-200) !important;
+  font-family: var(--p-font-family-sans) !important;
+}
+
+/* Resource List */
+.Polaris-ResourceItem {
+  padding: 16px 20px !important;
+}
+
+.Polaris-ResourceItem__Content {
+  font-size: var(--p-font-size-200) !important;
+}
+
+/* Empty State */
+.Polaris-EmptyState__Heading {
+  font-size: var(--p-font-size-600) !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.01em !important;
+}
+
+.Polaris-EmptyState__Content {
+  font-size: var(--p-font-size-300) !important;
+  line-height: 1.5 !important;
+}
+
+/* Banner */
+.Polaris-Banner__Heading {
+  font-size: var(--p-font-size-300) !important;
+  font-weight: 600 !important;
+}
+
+.Polaris-Banner__Content {
+  font-size: var(--p-font-size-200) !important;
+}
+
+/* Modal */
+.Polaris-Modal-Header__Title {
+  font-size: var(--p-font-size-500) !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.01em !important;
 }
 
 /* Layout */

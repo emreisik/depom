@@ -84,7 +84,7 @@ export default function PolarisNewIntegration() {
   if (stores.length < 2) {
     return (
       <Page
-        title="🔗 Yeni Entegrasyon"
+        title="Yeni Entegrasyon"
         breadcrumbs={[{ content: 'Entegrasyonlar', onAction: () => navigate('/integrations') }]}
       >
         <Layout>
@@ -110,17 +110,17 @@ export default function PolarisNewIntegration() {
 
   return (
     <Page
-      title="🔗 Yeni Entegrasyon Oluştur"
+      title="Yeni Entegrasyon Oluştur"
       breadcrumbs={[{ content: 'Entegrasyonlar', onAction: () => navigate('/integrations') }]}
       primaryAction={{
-        content: loading ? 'Oluşturuluyor...' : '✅ Entegrasyonu Oluştur',
+        content: loading ? 'Oluşturuluyor...' : 'Entegrasyonu Oluştur',
         onAction: handleSubmit,
         loading,
         disabled: loading,
       }}
       secondaryActions={[
         {
-          content: '❌ İptal',
+          content: 'İptal',
           onAction: () => navigate('/integrations'),
         },
       ]}
@@ -147,7 +147,7 @@ export default function PolarisNewIntegration() {
               />
 
               <Select
-                label="🏪 Kaynak Mağaza"
+                label="Kaynak Mağaza"
                 options={[
                   { label: 'Seçiniz', value: '' },
                   ...storeOptions,
@@ -158,7 +158,7 @@ export default function PolarisNewIntegration() {
               />
 
               <Select
-                label="🏪 Hedef Mağaza"
+                label="Hedef Mağaza"
                 options={[
                   { label: 'Seçiniz', value: '' },
                   ...storeOptions.filter(opt => opt.value !== formData.sourceStoreId),
@@ -189,7 +189,7 @@ export default function PolarisNewIntegration() {
             </TextContainer>
           </Card>
 
-          <Card title="🎯 Sonraki Adımlar" sectioned>
+          <Card title="Sonraki Adımlar" sectioned>
             <TextContainer>
               <p>Entegrasyon oluşturduktan sonra:</p>
               <List type="number">

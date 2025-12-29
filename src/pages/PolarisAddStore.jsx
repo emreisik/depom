@@ -44,7 +44,7 @@ export default function PolarisAddStore() {
       const response = await testConnection(formData.shopDomain, formData.accessToken);
       
       if (response.success) {
-        setSuccess('✅ Bağlantı başarılı! Mağaza bilgileri doğrulandı.');
+        setSuccess('Bağlantı başarılı! Mağaza bilgileri doğrulandı.');
       }
     } catch (err) {
       setError('Bağlantı hatası: ' + err.message);
@@ -81,17 +81,17 @@ export default function PolarisAddStore() {
 
   return (
     <Page
-      title="🏪 Yeni Mağaza Ekle"
+      title="Yeni Mağaza Ekle"
       breadcrumbs={[{ content: 'Mağazalar', onAction: () => navigate('/stores') }]}
       primaryAction={{
-        content: loading ? 'Ekleniyor...' : '✅ Mağazayı Ekle',
+        content: loading ? 'Ekleniyor...' : 'Mağazayı Ekle',
         onAction: handleSubmit,
         loading,
         disabled: loading || testing,
       }}
       secondaryActions={[
         {
-          content: '❌ İptal',
+          content: 'İptal',
           onAction: () => navigate('/stores'),
         },
       ]}
@@ -150,14 +150,14 @@ export default function PolarisAddStore() {
                 loading={testing}
                 disabled={!formData.shopDomain || !formData.accessToken || loading}
               >
-                {testing ? '🔄 Test Ediliyor...' : '🧪 Bağlantıyı Test Et'}
+                {testing ? 'Test Ediliyor...' : 'Bağlantıyı Test Et'}
               </Button>
             </FormLayout>
           </Card>
         </Layout.Section>
 
         <Layout.Section secondary>
-          <Card title="📋 Nasıl API Token Alınır?" sectioned>
+          <Card title="Nasıl API Token Alınır?" sectioned>
             <TextContainer>
               <List type="number">
                 <List.Item>
@@ -192,7 +192,7 @@ export default function PolarisAddStore() {
             </TextContainer>
           </Card>
 
-          <Card title="🔒 Güvenlik" sectioned>
+          <Card title="Güvenlik" sectioned>
             <TextContainer>
               <p>
                 API token'ınız AES-256 şifreleme ile güvenli bir şekilde saklanır.

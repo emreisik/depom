@@ -67,7 +67,7 @@ export default function PolarisStores() {
     
     const shortcutActions = [
       {
-        content: '🗑️ Sil',
+        content: 'Sil',
         destructive: true,
         onAction: () => handleDeleteClick(item),
       },
@@ -81,9 +81,6 @@ export default function PolarisStores() {
       >
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
           <div style={{ display: 'flex', alignItems: 'flex-start', gap: '16px', flex: 1 }}>
-            <div style={{ fontSize: '32px', display: 'flex', alignItems: 'center', justifyContent: 'center', width: '48px', height: '48px' }}>
-              🏪
-            </div>
             <div style={{ flex: 1 }}>
               <Text variant="bodyMd" fontWeight="semibold" as="h3">
                 {name}
@@ -120,7 +117,7 @@ export default function PolarisStores() {
     <EmptyState
       heading="İlk mağazanızı ekleyin"
       action={{
-        content: '➕ Mağaza Ekle',
+        content: 'Mağaza Ekle',
         onAction: () => navigate('/stores/add'),
       }}
       image="https://cdn.shopify.com/s/files/1/0262/4071/2726/files/emptystate-files.png"
@@ -143,7 +140,7 @@ export default function PolarisStores() {
       title="Mağazalar"
       subtitle={`${stores.length} mağaza bağlı`}
       primaryAction={{
-        content: '➕ Mağaza Ekle',
+        content: 'Mağaza Ekle',
         onAction: () => navigate('/stores/add'),
       }}
       secondaryActions={[

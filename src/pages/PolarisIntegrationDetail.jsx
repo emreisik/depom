@@ -49,7 +49,7 @@ export default function PolarisIntegrationDetail() {
       const response = await startFullSync(id);
       
       if (response.success) {
-        setSuccess(`✅ Senkronizasyon başarılı! ${response.data.productsCreated} ürün oluşturuldu, ${response.data.productsUpdated} ürün güncellendi.`);
+        setSuccess(`Senkronizasyon başarılı! ${response.data.productsCreated} ürün oluşturuldu, ${response.data.productsUpdated} ürün güncellendi.`);
         loadIntegration();
       }
     } catch (err) {
@@ -66,7 +66,7 @@ export default function PolarisIntegrationDetail() {
       const response = await syncInventoryOnly(id);
       
       if (response.success) {
-        setSuccess(`✅ Stok senkronizasyonu başarılı! ${response.data.inventoryUpdated || 0} stok güncellendi.`);
+        setSuccess(`Stok senkronizasyonu başarılı! ${response.data.inventoryUpdated || 0} stok güncellendi.`);
         loadIntegration();
       }
     } catch (err) {
@@ -77,10 +77,10 @@ export default function PolarisIntegrationDetail() {
   };
 
   const tabs = [
-    { id: 'sync', content: '🎯 Senkronizasyon', panelID: 'sync-panel' },
-    { id: 'products', content: '📦 Ürünler & Koleksiyonlar', panelID: 'products-panel' },
-    { id: 'history', content: '📜 Geçmiş', panelID: 'history-panel' },
-    { id: 'settings', content: '⚙️ Ayarlar', panelID: 'settings-panel' },
+    { id: 'sync', content: 'Senkronizasyon', panelID: 'sync-panel' },
+    { id: 'products', content: 'Ürünler & Koleksiyonlar', panelID: 'products-panel' },
+    { id: 'history', content: 'Geçmiş', panelID: 'history-panel' },
+    { id: 'settings', content: 'Ayarlar', panelID: 'settings-panel' },
   ];
 
   if (loading) {
@@ -111,7 +111,7 @@ export default function PolarisIntegrationDetail() {
       breadcrumbs={[{ content: 'Entegrasyonlar', onAction: () => navigate('/integrations') }]}
       secondaryActions={[
         {
-          content: '🔄 Yenile',
+          content: 'Yenile',
           onAction: loadIntegration,
         },
       ]}
@@ -153,14 +153,14 @@ export default function PolarisIntegrationDetail() {
                             loading={syncing}
                             disabled={syncing}
                           >
-                            🔄 Tam Senkronizasyon
+                            Tam Senkronizasyon
                           </Button>
                           <Button
                             onClick={handleInventorySync}
                             loading={syncing}
                             disabled={syncing}
                           >
-                            📊 Stok Senkronizasyonu
+                            Stok Senkronizasyonu
                           </Button>
                         </ButtonGroup>
                       </div>

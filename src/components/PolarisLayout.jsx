@@ -32,7 +32,7 @@ export default function PolarisLayout() {
     <TopBar.UserMenu
       actions={[
         {
-          items: [{ content: '⚙️ Ayarlar' }],
+          items: [{ content: 'Ayarlar' }],
         },
       ]}
       name="Depom"
@@ -57,17 +57,17 @@ export default function PolarisLayout() {
       <Navigation.Section
         items={[
           {
-            label: '🏠 Ana Sayfa',
+            label: 'Ana Sayfa',
             onClick: () => navigate('/'),
             selected: location.pathname === '/',
           },
           {
-            label: '🏪 Mağazalar',
+            label: 'Mağazalar',
             onClick: () => navigate('/stores'),
             selected: location.pathname.startsWith('/stores'),
           },
           {
-            label: '🔗 Entegrasyonlar',
+            label: 'Entegrasyonlar',
             onClick: () => navigate('/integrations'),
             selected: location.pathname.startsWith('/integrations'),
           },

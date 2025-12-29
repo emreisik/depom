@@ -82,7 +82,7 @@ export default function PolarisIntegrations() {
             </Text>
             <div style={{ marginTop: '8px' }}>
               <Text variant="bodySm" as="p" color="subdued">
-                🏪 {getStoreName(sourceStoreId)} → 🏪 {getStoreName(targetStoreId)}
+                {getStoreName(sourceStoreId)} → {getStoreName(targetStoreId)}
               </Text>
             </div>
             <div style={{ marginTop: '4px' }}>
@@ -105,14 +105,14 @@ export default function PolarisIntegrations() {
     <EmptyState
       heading="İlk entegrasyonunuzu oluşturun"
       action={{
-        content: '➕ Yeni Entegrasyon',
+        content: 'Yeni Entegrasyon',
         onAction: () => navigate('/integrations/new'),
         disabled: stores.length < 2,
       }}
       secondaryAction={
         stores.length < 2
           ? {
-              content: '🏪 Mağaza Ekle',
+              content: 'Mağaza Ekle',
               onAction: () => navigate('/stores/add'),
             }
           : undefined
@@ -136,16 +136,16 @@ export default function PolarisIntegrations() {
   return (
     <Page
       fullWidth
-      title="🔗 Entegrasyonlar"
+      title="Entegrasyonlar"
       subtitle={`${integrations.length} entegrasyon • ${stores.length} mağaza`}
       primaryAction={{
-        content: '➕ Yeni Entegrasyon',
+        content: 'Yeni Entegrasyon',
         onAction: () => navigate('/integrations/new'),
         disabled: stores.length < 2,
       }}
       secondaryActions={[
         {
-          content: '🔄 Yenile',
+          content: 'Yenile',
           onAction: loadData,
         },
       ]}
@@ -179,7 +179,7 @@ export default function PolarisIntegrations() {
       </Card>
 
       {integrations.length > 0 && (
-        <Card title="💡 İpucu" sectioned>
+        <Card title="İpucu" sectioned>
           <TextContainer>
             <p>
               Entegrasyonlara tıklayarak detaylı senkronizasyon ayarlarına erişebilir,
