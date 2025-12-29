@@ -293,41 +293,6 @@ class ShopifyAPI {
     return data.inventory_items;
   }
 
-  async getCollections(limit = 250) {
-    const data = await this.makeRequest(`custom_collections?limit=${limit}`);
-    
-    if (Array.isArray(data)) {
-      return data;
-    }
-    
-    return data.custom_collections || [];
-  }
-
-  async getSmartCollections(limit = 250) {
-    const data = await this.makeRequest(`smart_collections?limit=${limit}`);
-    
-    if (Array.isArray(data)) {
-      return data;
-    }
-    
-    return data.smart_collections || [];
-  }
-
-  async getAllCollections(limit = 250) {
-    // Fetch both custom and smart collections
-    const [customCollections, smartCollections] = await Promise.all([
-      this.getCollections(limit),
-      this.getSmartCollections(limit)
-    ]);
-
-    // Combine and add type field
-    const allCollections = [
-      ...customCollections.map(c => ({ ...c, collection_type: 'custom' })),
-      ...smartCollections.map(c => ({ ...c, collection_type: 'smart' }))
-    ];
-
-    return allCollections;
-  }
 
   async getProductsByVendor() {
     const products = await this.getProducts(250);
