@@ -9,10 +9,14 @@ import PolarisDashboard from './pages/PolarisDashboard'
 import Stores from './pages/Stores'
 import PolarisStores from './pages/PolarisStores'
 import AddStore from './pages/AddStore'
+import PolarisAddStore from './pages/PolarisAddStore'
 import ProductTransfer from './pages/ProductTransfer'
 import Integrations from './pages/Integrations'
+import PolarisIntegrations from './pages/PolarisIntegrations'
 import NewIntegration from './pages/NewIntegration'
+import PolarisNewIntegration from './pages/PolarisNewIntegration'
 import IntegrationDetail from './pages/IntegrationDetail'
+import PolarisIntegrationDetail from './pages/PolarisIntegrationDetail'
 import SyncLogDetail from './pages/SyncLogDetail'
 import Install from './pages/Install'
 import PrivacyPolicy from './pages/PrivacyPolicy'
@@ -35,10 +39,10 @@ function App() {
           <Route element={<PolarisLayout />}>
             <Route path="/" element={<PolarisDashboard />} />
             <Route path="/stores" element={<PolarisStores />} />
-            <Route path="/stores/add" element={<AddStore />} />
-            <Route path="/integrations" element={<Integrations />} />
-            <Route path="/integrations/new" element={<NewIntegration />} />
-            <Route path="/integrations/:id" element={<IntegrationDetail />} />
+            <Route path="/stores/add" element={<PolarisAddStore />} />
+            <Route path="/integrations" element={<PolarisIntegrations />} />
+            <Route path="/integrations/new" element={<PolarisNewIntegration />} />
+            <Route path="/integrations/:id" element={<PolarisIntegrationDetail />} />
             <Route path="/integrations/:id/logs/:logId" element={<SyncLogDetail />} />
             <Route path="/transfer" element={<ProductTransfer />} />
             <Route path="*" element={<Navigate to="/" replace />} />
