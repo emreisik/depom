@@ -36,7 +36,6 @@ export default function PolarisLayout() {
         },
       ]}
       name="Depom"
-      detail="Mağaza Yönetimi"
       initials="D"
       open={userMenuActive}
       onToggle={toggleUserMenuActive}
