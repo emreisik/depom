@@ -14,13 +14,7 @@ import {
   ResourceItem,
   Text,
   Badge,
-  Icon,
 } from '@shopify/polaris';
-import {
-  StoreMajor,
-  CirclePlusMajor,
-  RefreshMajor,
-} from '@shopify/polaris-icons';
 import { getStores } from '../utils/api';
 
 export default function PolarisDashboard() {
@@ -59,7 +53,7 @@ export default function PolarisDashboard() {
       >
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <Icon source={StoreMajor} color="base" />
+            <span style={{ fontSize: '24px' }}>🏪</span>
             <div>
               <Text variant="bodyMd" fontWeight="semibold" as="h3">
                 {name}
@@ -81,9 +75,8 @@ export default function PolarisDashboard() {
     <EmptyState
       heading="İlk mağazanızı ekleyin"
       action={{
-        content: 'Mağaza Ekle',
+        content: '➕ Mağaza Ekle',
         onAction: () => navigate('/stores/add'),
-        icon: CirclePlusMajor,
       }}
       image="https://cdn.shopify.com/s/files/1/0262/4071/2726/files/emptystate-files.png"
     >
@@ -110,14 +103,12 @@ export default function PolarisDashboard() {
       title="🏪 Depom"
       subtitle="Mağazalar arası stok yönetimi"
       primaryAction={{
-        content: 'Yeni Mağaza',
-        icon: CirclePlusMajor,
+        content: '➕ Yeni Mağaza',
         onAction: () => navigate('/stores/add'),
       }}
       secondaryActions={[
         {
-          content: 'Yenile',
-          icon: RefreshMajor,
+          content: '🔄 Yenile',
           onAction: loadStores,
         },
       ]}

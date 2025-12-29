@@ -16,11 +16,6 @@ import {
   Icon,
   Thumbnail,
 } from '@shopify/polaris';
-import {
-  StoreMajor,
-  CirclePlusMajor,
-  DeleteMinor,
-} from '@shopify/polaris-icons';
 import { getStores, deleteStore } from '../utils/api';
 
 export default function PolarisStores() {
@@ -72,8 +67,7 @@ export default function PolarisStores() {
     
     const shortcutActions = [
       {
-        content: 'Sil',
-        icon: DeleteMinor,
+        content: '🗑️ Sil',
         destructive: true,
         onAction: () => handleDeleteClick(item),
       },
@@ -87,11 +81,9 @@ export default function PolarisStores() {
       >
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
           <div style={{ display: 'flex', alignItems: 'flex-start', gap: '16px', flex: 1 }}>
-            <Thumbnail
-              source={StoreMajor}
-              size="medium"
-              alt={name}
-            />
+            <div style={{ fontSize: '32px', display: 'flex', alignItems: 'center', justifyContent: 'center', width: '48px', height: '48px' }}>
+              🏪
+            </div>
             <div style={{ flex: 1 }}>
               <Text variant="bodyMd" fontWeight="semibold" as="h3">
                 {name}
@@ -128,9 +120,8 @@ export default function PolarisStores() {
     <EmptyState
       heading="İlk mağazanızı ekleyin"
       action={{
-        content: 'Mağaza Ekle',
+        content: '➕ Mağaza Ekle',
         onAction: () => navigate('/stores/add'),
-        icon: CirclePlusMajor,
       }}
       image="https://cdn.shopify.com/s/files/1/0262/4071/2726/files/emptystate-files.png"
     >
@@ -152,8 +143,7 @@ export default function PolarisStores() {
       title="Mağazalar"
       subtitle={`${stores.length} mağaza bağlı`}
       primaryAction={{
-        content: 'Mağaza Ekle',
-        icon: CirclePlusMajor,
+        content: '➕ Mağaza Ekle',
         onAction: () => navigate('/stores/add'),
       }}
       secondaryActions={[

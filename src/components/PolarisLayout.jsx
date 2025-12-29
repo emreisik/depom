@@ -7,12 +7,6 @@ import {
   Toast,
   Loading,
 } from '@shopify/polaris';
-import {
-  HomeMajor,
-  StoreMajor,
-  TransferMajor,
-  SettingsMajor,
-} from '@shopify/polaris-icons';
 
 export default function PolarisLayout() {
   const navigate = useNavigate();
@@ -38,7 +32,7 @@ export default function PolarisLayout() {
     <TopBar.UserMenu
       actions={[
         {
-          items: [{ content: 'Ayarlar', icon: SettingsMajor }],
+          items: [{ content: '⚙️ Ayarlar' }],
         },
       ]}
       name="Depom"
@@ -63,20 +57,17 @@ export default function PolarisLayout() {
       <Navigation.Section
         items={[
           {
-            label: 'Ana Sayfa',
-            icon: HomeMajor,
+            label: '🏠 Ana Sayfa',
             onClick: () => navigate('/'),
             selected: location.pathname === '/',
           },
           {
-            label: 'Mağazalar',
-            icon: StoreMajor,
+            label: '🏪 Mağazalar',
             onClick: () => navigate('/stores'),
             selected: location.pathname.startsWith('/stores'),
           },
           {
-            label: 'Entegrasyonlar',
-            icon: TransferMajor,
+            label: '🔗 Entegrasyonlar',
             onClick: () => navigate('/integrations'),
             selected: location.pathname.startsWith('/integrations'),
           },
