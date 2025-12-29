@@ -1,42 +1,17 @@
 import { useEffect } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
-import { useAppBridge } from '@shopify/app-bridge-react';
-import { NavigationMenu } from '@shopify/app-bridge/actions';
+import { useLocation } from 'react-router-dom';
 
 export function useShopifyNavigation() {
-  const app = useAppBridge();
-  const navigate = useNavigate();
   const location = useLocation();
 
   useEffect(() => {
-    if (!app) return;
-
-    const navigationMenu = NavigationMenu.create(app, {
-      items: [
-        {
-          label: 'Ana Sayfa',
-          destination: '/',
-        },
-        {
-          label: 'Mağazalar',
-          destination: '/stores',
-        },
-        {
-          label: 'Entegrasyonlar',
-          destination: '/integrations',
-        },
-      ],
-      active: location.pathname,
-    });
-
-    // Handle navigation clicks
-    navigationMenu.subscribe(NavigationMenu.Action.SELECT, (payload) => {
-      navigate(payload.destination);
-    });
-
-    return () => {
-      navigationMenu.unsubscribe();
-    };
-  }, [app, navigate, location]);
+    // When embedded in Shopify Admin, this will use Shopify's native navigation
+    // For standalone mode, this is a no-op
+    
+    // Future: Add Shopify App Bridge NavigationMenu when running embedded
+    // For now, this hook is a placeholder for Shopify integration
+    
+    console.log('Current route:', location.pathname);
+  }, [location]);
 }
 
