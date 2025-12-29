@@ -38,6 +38,8 @@
 
 ### Frontend
 - **React 18** - Modern UI framework
+- **Shopify Polaris** - UI component library
+- **Shopify App Bridge** - Embedded app integration
 - **React Router v6** - Routing
 - **Axios** - HTTP client
 - **Vite** - Build tool
