@@ -1,0 +1,28 @@
+[build]
+  command = "npm run build"
+  functions = "netlify/functions"
+  publish = "dist"
+
+[functions]
+  node_bundler = "esbuild"
+  # Production timeout (10 seconds default, max 26 seconds on free plan)
+  # Local development has no timeout limit
+  
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[dev]
+  command = "npx vite"
+  port = 8888
+  targetPort = 5173
+  publish = "dist"
+  autoLaunch = false
+  functionsTimeout = 300 # 5 dakika (300 saniye)
+
