@@ -16,7 +16,7 @@ Bu proje **Neon PostgreSQL** kullanıyor - hızlı, serverless ve ücretsiz!
 
 Neon connection string'iniz var:
 ```
-postgresql://neondb_owner:npg_3eaPW4yOuhtd@ep-floral-sky-ah7wrwz5-pooler.c-3.us-east-1.aws.neon.tech/stoky?sslmode=require
+postgresql://neondb_owner:npg_3eaPW4yOuhtd@ep-floral-sky-ah7wrwz5-pooler.c-3.us-east-1.aws.neon.tech/neondb?sslmode=require
 ```
 
 ### 2. Dependencies Yükle
@@ -38,7 +38,7 @@ npm install
 `.env` dosyası zaten oluşturuldu! İçeriği:
 
 ```env
-DATABASE_URL=postgresql://neondb_owner:npg_3eaPW4yOuhtd@ep-floral-sky-ah7wrwz5-pooler.c-3.us-east-1.aws.neon.tech/stoky?sslmode=require
+DATABASE_URL=postgresql://neondb_owner:npg_3eaPW4yOuhtd@ep-floral-sky-ah7wrwz5-pooler.c-3.us-east-1.aws.neon.tech/neondb?sslmode=require
 ENCRYPTION_KEY=a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2
 JWT_SECRET=stok-kontrol-secret-2025
 ```
@@ -130,7 +130,7 @@ Netlify'a deploy ederken environment variable'ı ekleyin:
 2. **Add a variable**:
    ```
    Key: DATABASE_URL
-   Value: postgresql://neondb_owner:npg_3eaPW4yOuhtd@ep-floral-sky-ah7wrwz5-pooler.c-3.us-east-1.aws.neon.tech/stoky?sslmode=require
+   Value: postgresql://neondb_owner:npg_3eaPW4yOuhtd@ep-floral-sky-ah7wrwz5-pooler.c-3.us-east-1.aws.neon.tech/neondb?sslmode=require
    
    Key: ENCRYPTION_KEY
    Value: a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2
