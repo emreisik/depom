@@ -3,16 +3,12 @@ import { useNavigate, useLocation, Outlet } from 'react-router-dom';
 import {
   Frame,
   Navigation,
-  TopBar,
-  Toast,
-  Loading,
 } from '@shopify/polaris';
 
 export default function PolarisLayout() {
   const navigate = useNavigate();
   const location = useLocation();
   const [mobileNavigationActive, setMobileNavigationActive] = useState(false);
-  const [userMenuActive, setUserMenuActive] = useState(false);
 
   const toggleMobileNavigationActive = useCallback(
     () =>
@@ -20,34 +16,6 @@ export default function PolarisLayout() {
         (mobileNavigationActive) => !mobileNavigationActive,
       ),
     [],
-  );
-
-  const toggleUserMenuActive = useCallback(
-    () => setUserMenuActive((userMenuActive) => !userMenuActive),
-    [],
-  );
-
-  // Top Bar configuration
-  const userMenuMarkup = (
-    <TopBar.UserMenu
-      actions={[
-        {
-          items: [{ content: 'Ayarlar' }],
-        },
-      ]}
-      name="Depom"
-      initials="D"
-      open={userMenuActive}
-      onToggle={toggleUserMenuActive}
-    />
-  );
-
-  const topBarMarkup = (
-    <TopBar
-      showNavigationToggle
-      userMenu={userMenuMarkup}
-      onNavigationToggle={toggleMobileNavigationActive}
-    />
   );
 
   // Navigation configuration
@@ -77,7 +45,6 @@ export default function PolarisLayout() {
 
   return (
     <Frame
-      topBar={topBarMarkup}
       navigation={navigationMarkup}
       showMobileNavigation={mobileNavigationActive}
       onNavigationDismiss={toggleMobileNavigationActive}
